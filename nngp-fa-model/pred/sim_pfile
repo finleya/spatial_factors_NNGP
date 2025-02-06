@@ -1,0 +1,37 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 1
+seed 1
+n.samples 10
+n.report 100
+out.file chain-1
+
+#m number of nearest neighbors
+#n number of locations
+#p number of columns of p
+#q columns of Lambda, i.e., number of GPs
+#h number of outcomes at each location
+
+m 15
+n 1000
+p 3
+q 4
+h 10
+
+n0 1000
+
+X0.file ../sim_data/X.ho,3,10000
+coords0.file ../sim_data/coords.ho,1000,2
+
+coords.file ../sim_data/coords.obs,1000,2
+
+nnIndx0.file nn.indx,1000,15
+
+## FYI, you cand double check how many rows are in a file via wc -l ../pd-samps-beta
+## FYI, you can double check number of columns in a file via awk -F' ' 'NR==1{print NF}' ../pd-samps-beta
+
+beta.samples.file ../chain-1-beta-thinned,30,10
+tauSq.samples.file ../chain-1-tauSq-thinned,10,10
+lambda.samples.file ../chain-1-lambda-thinned,40,10
+phi.samples.file ../chain-1-phi-thinned,4,10
+w.samples.file ../chain-1-w-thinned,4000,10

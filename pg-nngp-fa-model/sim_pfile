@@ -1,0 +1,52 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 6
+seed 1
+n.samples 50000
+n.samples.start 45000
+n.report 200
+out.file chain-1
+
+nn.fast 1
+nn.index.only 0
+
+##dim of lambda h x q
+##dim of X p x (nxh)
+##number of
+
+m 15
+n 1000
+p 3
+q 4
+h 10
+
+#.file is file name, number of rows, and number of columns
+#coords n x 2
+coords.file sim_data/coords,1000,2 
+
+#X p x n*h
+X.file sim_data/X,3,10000
+
+#z n*h x 1
+z.file sim_data/z,10000,1
+
+y.missing.file sim_data/missing,10000,1
+
+#lambda h x q
+lambda.starting.file sim_data/lambda.starting,10,4
+
+#beta h*p x 1
+beta.starting.file sim_data/beta.starting,30,1
+
+#phi q x 1
+phi.starting.file sim_data/phi,4,1
+
+#w n*q x 1
+w.starting.file sim_data/w.starting,4000,1
+
+#phi.a lower bound, phi.b upper bound
+phi.a 2.19
+phi.b 5807.06
+
+#phi.tuning q
+phi.tuning 0.5,0.5,0.5,0.5

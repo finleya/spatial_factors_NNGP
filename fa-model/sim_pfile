@@ -1,0 +1,39 @@
+##No spaces between comma separated items (or the world will implode)!
+
+n.threads 10
+seed 1
+n.samples 6000
+n.samples.start 4000
+n.report 500
+out.file chain-1
+
+
+##dim of lambda h x q
+##dim of X p x (nxh)
+##number of
+
+n 1000
+p 3
+q 4
+h 10
+
+#X p x n*h
+X.file sim_data/X,3,10000
+
+#z n*h x 1
+z.file sim_data/z,10000,1
+
+#lambda h x q
+lambda.starting.file sim_data/lambda.starting,10,4
+
+#beta h*p x 1
+beta.starting.file sim_data/beta.starting,30,1
+
+#tauSq h x 1
+tauSq.starting.file sim_data/tauSq.starting,10,1
+
+#w n*q x 1
+w.starting.file sim_data/w.starting,4000,1
+
+#tauSq.b h x 1
+tauSq.b.file sim_data/tauSq.b,10,1
